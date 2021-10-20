@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignment 2.2</title>
+  <script>
+    function checkDetails(){
+      let x = document.getElementById("roll").value;
+      var num = /^[0-9]+$/;
+      if(!x.match(num))
+      alert("The roll number must be of numeric type!");
+      else if(x.toString().length !== 7)
+      alert("The roll no. must be of length 7!");
+      else
+      alert("Valid!");
+    }
+  </script>
+</head>
+<body style="text-align: left;">
+  <h2 style="color: rgb(167, 25, 49)">Registration form</h2>
+  <form action="">
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name"><br><br>
+    <label for="roll">Roll Number:</label>
+    <input type="text" name="roll" id="roll"><br><br>
+    <label for="course">Courses:</label>
+    <input type="text" name="course" id="course" style="width: 50ch; height: 10ch;"><br><br>
+    <input type="submit" onclick="checkDetails()">
+  </form>
+</body>
+</html>

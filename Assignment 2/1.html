@@ -1,0 +1,84 @@
+<!-- js website to use on blur and on click -->
+<!-- validate age greater than 18 -->
+<!-- count the number of words in description -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 2.1</title>
+
+</head>
+
+<body style="text-align: left; font-family: Arial, Helvetica, sans-serif">
+
+    <h1 style="color: rgb(167, 25, 49);">
+		Age Validate
+	</h1>
+
+    <input id="age">
+
+    <button type="button" onclick="myFunction()">Check Age</button>
+
+    <p id="result"></p>
+
+    <script>
+    function myFunction() {
+    // Get the value of the input field with id="numb"
+    let x = document.getElementById("age").value;
+    // If x is Not a Number or less than one or greater than 10
+    let text;
+    if (isNaN(x) || x < 18) {
+     text = "Age not valid";
+    } else {
+        text = "Age Valid";
+    }
+  document.getElementById("result").innerHTML = text;
+}
+</script>
+	<h1 style="color: rgb(167, 25, 49)">
+		Count words
+	</h1>
+	<textarea id="inputField" rows="10" cols="60">
+	</textarea>
+	<br><br>
+	<button onclick="countWords()">
+		Submit
+	</button>
+	<br><br>
+	<p> Number of Words:
+		<span id="output">0</span>
+	</p>
+	<script>
+		function countWords() {
+
+			// Get the input text value
+			var text = document.getElementById("inputField").value;
+
+			// Initialize the word counter
+			var wordCount = 0;
+
+			// Loop through the text
+			// and count spaces in it
+			for (var i = 0; i < text.length - 1; i++) {
+				var currentCharacter = text[i];
+				var nextCharecter = text[i+1]
+
+				// Check if the character is a space
+				if (currentCharacter === " " && nextCharecter !== " ") {
+					wordCount += 1;
+				}
+			}
+
+			// Add 1 to make the count equal to
+			// the number of words
+			// (count of words = count of spaces + 1)
+			wordCount += 1;
+
+			// Display it as output
+			document.getElementById("output").innerHTML = wordCount;
+		}
+	</script>
+</body>
+</html>
